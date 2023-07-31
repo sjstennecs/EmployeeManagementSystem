@@ -19,6 +19,21 @@ namespace EmployeeManagementSystem
         private string Position { get; set;}
         private int Salary { get; set;}
 
+        // Constructor
+        // Default will just be John Doe the QA intern
+        public Employee()
+        {
+            EmployeeID = 0;
+            FirstName = "John";
+            LastName = "Doe";
+            Address = new Address();
+            Email = "JohnDoeCS@business.mail";
+            PhoneNumber = "(123)456-7890";
+            Department = "QA";
+            Position = "Intern";
+            Salary = 35000;
+        }
+
         // Class Methods
 
         public string GetFullName()
@@ -28,8 +43,8 @@ namespace EmployeeManagementSystem
 
         public string DisplayInfo()
         {
-            string infoString = $"Employee: {EmployeeID}\nLast Name: {LastName}, First Name: {FirstName}\nDepartment: {Department}, Position: {.Position}, Salary: {Salary}" +
-                $"\nAddress: {Address.PrintAddress}, Email: {Email}";
+            string infoString = $"Employee: {EmployeeID}\nLast Name: {LastName}, First Name: {FirstName}\nDepartment: {Department}, Position: {Position}, Salary: {Salary}" +
+                $"\nAddress: {Address.PrintAddress()}, Email: {Email}";
             return infoString;
         }
     }
